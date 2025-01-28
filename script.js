@@ -1,3 +1,5 @@
+// const moment = require("./moment"); 
+
 document.querySelector("#submitButton").addEventListener("click", function () {
     const trip = {
         departure: document.querySelector("#DepartureInput").value,
@@ -14,18 +16,13 @@ document.querySelector("#submitButton").addEventListener("click", function () {
             .then((response) => response.json())
             .then((data) => {
                 if (data.result === true) {
-                    for (const element of data.trips) {
-                        // document.querySelector("#messagetBox").css('display:none')
-                        document.querySelector("#resultBox").innerHTML += `
-                         <div class="newTrip">
-                        <div class="depShow"><p>${element.departure}</p></div>
-                        <div class="arrShow"><p>${element.arrival}</p></div>
-                        <div class="dateShow"><p>${element.date}</p></div>
-                        <button  type="button" class="buyButton" >Search</button>
-                        </div>
-                        `;
+                    let valueTrips = document.querySelectorAll(".newTrip").length
+                    if (valueTrips === 0) {
+                        createTrip(data.trips)
+                    } else {
+                        resetResultBox()
+                        createTrip(data.trips)
                     }
-                    // updateDeleteCityEventListener();
                 } else if (data.result === false) {
                     document.querySelector("#messageBox-img").src =
                         "./images/notfound.png";
@@ -37,3 +34,37 @@ document.querySelector("#submitButton").addEventListener("click", function () {
         alert("Empty fields");
     }
 });
+
+function dateFormat(dateRecieve) {
+    const date = new Date(dateRecieve)
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    let dateFormat = `${year}-${month}-${day}`
+    return dateFormat
+}
+
+
+function resetResultBox() {
+   
+    const element = document.querySelectorAll(".newTrip")
+    for (let i = 0; i < element.length; i++) {
+        element[i].remove()
+    }
+    
+}
+
+function createTrip(dataTab) {
+    for (const element of dataTab) {
+        document.querySelector("#messageBox").style.display = "none";
+        document.querySelector("#resultBox").style.display = "flex";
+        document.querySelector("#resultBox").innerHTML += `
+        <div class="newTrip">
+            <div class="depShow"><p>${element.departure}</p></div>
+            <div class="arrShow"><p>${element.arrival}</p></div>
+            <div class="dateShow"><p>${dateFormat(element.date)}</p></div>
+            <button  type="button" class="buyButton" >Cart</button>
+        </div>
+        `;
+    }
+}

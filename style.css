@@ -136,3 +136,29 @@ a {
     color: black;
     text-decoration: none;
 }
+
+#newTrip {
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 10px;
+    display: none; // display flex
+    justify-content: space-between;
+    width: 95%;
+    height: auto;
+    background-color: aqua;
+}
+
+#depShow {
+    width: 22%;
+    background-color: rgb(69, 73, 73);
+}
+
+#arrShow {
+    width: 22%;
+    background-color: rgb(66, 148, 148);
+}
+
+#dateShow {
+    width: 22%;
+    background-color: rgb(56, 66, 66);
+}

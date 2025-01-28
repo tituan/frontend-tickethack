@@ -5,5 +5,9 @@
   "main": "index.js",
   "repository": "https://github.com/tituan/frontend-tickethack.git",
   "author": "Fabio and Antoine",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.30.1",
+    "node-fetch": "2"
+  }
 }

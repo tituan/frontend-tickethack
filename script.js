@@ -14,20 +14,17 @@ document.querySelector("#submitButton").addEventListener("click", function () {
         .then((data) => {
             if (data.trips) {
                 for (const element of data.trips) {
-                    console.log(element.departure)
-                    console.log(element.departure)
-                    document.querySelector("#newTrip").innerHTML += `
-                    <div class="">
-                        <div id="depShow">${element.departure}</div>
-                        <div id="arrShow">${element.arrival}</div>
-                        <div id="dateShow">${element.date}</div>
-                        <button  type="button" id="buyButton" >Search</button>
+                    document.querySelector("#resultBox").innerHTML += `
+                     <div class="newTrip">
+                    <div class="depShow"><p>${element.departure}</p></div>
+                    <div class="arrShow"><p>${element.arrival}</p></div>
+                    <div class="dateShow"><p>${element.date}</p></div>
+                    <button  type="button" class="buyButton" >Search</button>
                     </div>
-                    
-                `;
+                    `;
                 }
-            } else {
-                console.log('no')
+                // console.log(data.trips);
+                // updateDeleteCityEventListener();
             }
             console.log(data);
         });

@@ -137,28 +137,28 @@ a {
     text-decoration: none;
 }
 
-#newTrip {
+.newTrip {
     box-sizing: border-box;
     border-radius: 5px;
     padding: 10px;
-    /* display: none; // display flex */
+    display: flex;
     justify-content: space-between;
     width: 95%;
     height: auto;
     background-color: aqua;
 }
 
-#depShow {
+.depShow {
     width: 22%;
     background-color: rgb(69, 73, 73);
 }
 
-#arrShow {
+.arrShow {
     width: 22%;
     background-color: rgb(66, 148, 148);
 }
 
-#dateShow {
+.dateShow {
     width: 22%;
     background-color: rgb(56, 66, 66);
 }

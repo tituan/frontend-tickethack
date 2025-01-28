@@ -5,7 +5,7 @@ document.querySelector("#submitButton").addEventListener("click", function () {
         date: document.querySelector("#dateInput").value,
     };
 
-    fetch("http://localhost:3000/trips", {
+    fetch("http://localhost:3000/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(trip),
@@ -21,7 +21,7 @@ document.querySelector("#submitButton").addEventListener("click", function () {
                     <button  type="button" id="buyButton" >Search</button>
                 `;
                 }
-                updateDeleteCityEventListener();
+                // updateDeleteCityEventListener();
             }
             console.log(data);
         });

@@ -13,14 +13,17 @@ document.querySelector("#submitButton").addEventListener("click", function () {
         .then((response) => response.json())
         .then((data) => {
             if (data.trips) {
-                for (let i = 0; i < data.trips.length; i++) {
-                    document.querySelector("#newTrip").innerHTML += `
-                  <div id="depShow"></div>
-                    <div id="arrShow"></div>
-                    <div id="dateShow"></div>
-                    <button  type="button" id="buyButton" >Search</button>
-                `;
+                for (const element of data.trips) {
+                    document.querySelector("#resultBox").innerHTML += `
+                     <div class="newTrip">
+                    <div class="depShow"><p>${element.departure}</p></div>
+                    <div class="arrShow"><p>${element.arrival}</p></div>
+                    <div class="dateShow"><p>${element.date}</p></div>
+                    <button  type="button" class="buyButton" >Search</button>
+                    </div>
+                    `;
                 }
+                // console.log(data.trips);
                 // updateDeleteCityEventListener();
             }
             console.log(data);

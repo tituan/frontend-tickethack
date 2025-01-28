@@ -1,0 +1,104 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url("./background.jpg");
+    background-size: cover;
+}
+
+#header {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#logo {
+}
+
+#menu {
+    display: inline;
+    margin-right: 10px;
+}
+
+#main {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    flex-direction: column;
+    height: calc(100vh - 50px);
+}
+
+#title {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 60%;
+    /* background-color: white; */
+    text-align: center;
+    color: white;
+}
+#container {
+    /* background-color: rgb(120, 84, 84); */
+    width: 50%;
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerBox {
+    border-radius: 10px;
+    background-color: white;
+    height: 90%;
+    width: 40%;
+}
+
+#resultBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#searchBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#searchDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+img {
+    width: 50%;
+}
+#line {
+    height: 1px;
+    width: 70%;
+    background-color: rgb(58, 124, 113);
+}
+
+#logoP {
+    margin-left: 10px;
+    color: rgb(58, 124, 113);
+    font-weight: 800;
+    font-size: x-large;
+}
+#submitButton {
+    background-color: rgb(58, 124, 113);
+    border-radius: 5px;
+    width: 80%;
+    height: 30px;
+    border-color: rgb(58, 124, 113);
+    color: white;
+}
+input {
+    width: 90%;
+    height: 20px;
+    border-color: white;
+    border-radius: 5px;
+    background-color: rgb(242, 242, 237);
+}

@@ -1,0 +1,9 @@
+{
+  "name": "frontend-tickethack",
+  "version": "1.0.0",
+  "description": "hackathon",
+  "main": "index.js",
+  "repository": "https://github.com/tituan/frontend-tickethack.git",
+  "author": "Fabio and Antoine",
+  "license": "MIT"
+}

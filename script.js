@@ -25,7 +25,7 @@ document.querySelector("#submitButton").addEventListener("click", function () {
                 }
                 // console.log(data.trips);
                 // updateDeleteCityEventListener();
-            } else if ((data.result = false)) {
+            } else if (data.result === false) {
                 console.log("kikou");
             } else {
                 document.querySelector("#messageBox-img").src =
@@ -34,6 +34,5 @@ document.querySelector("#submitButton").addEventListener("click", function () {
                     .querySelector("#bookingText")
                     .textContent("No trip found.");
             }
-            // console.log(data);
         });
 });

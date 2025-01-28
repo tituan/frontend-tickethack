@@ -141,7 +141,7 @@ a {
     box-sizing: border-box;
     border-radius: 5px;
     padding: 10px;
-    display: none; // display flex
+    /* display: none; // display flex */
     justify-content: space-between;
     width: 95%;
     height: auto;

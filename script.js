@@ -46,12 +46,10 @@ function dateFormat(dateRecieve) {
 
 
 function resetResultBox() {
-   
     const element = document.querySelectorAll(".newTrip")
     for (let i = 0; i < element.length; i++) {
         element[i].remove()
     }
-    
 }
 
 function createTrip(dataTab) {

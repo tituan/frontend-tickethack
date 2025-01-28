@@ -1,3 +1,18 @@
+html {
+    box-sizing: border-box;
+  
+    *,
+    *::after,
+    *::before {
+      box-sizing: inherit;
+    }
+  }
+
+input{
+    all: unset;
+}
+
+
 body {
     padding: 0;
     margin: 0;
@@ -14,8 +29,6 @@ body {
     -webkit-box-shadow: 0px 9px 15px -1px rgba(0,0,0,0.26); 
     box-shadow: 0px 9px 15px -1px rgba(0,0,0,0.26);
 }
-/* #logo {
-} */
 
 #menu {
     display: inline;
@@ -24,7 +37,6 @@ body {
 
 #main {
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
     flex-direction: column;
     height: calc(100vh - 50px);
@@ -33,14 +45,13 @@ body {
 }
 
 #title {
-    margin-bottom: 20px;
+    margin-bottom: 45px;
     margin-top: 20px;
     width: 80%;
     text-align: center;
     color: white;
 }
 #container {
-    /* background-color: rgb(120, 84, 84); */
     width: 70%;
     height: 50vh;
     display: flex;
@@ -51,7 +62,7 @@ body {
     border-radius: 10px;
     background-color: white;
     height: 90%;
-    width: 35%;
+    width: 40%;
 }
 
 #resultBox {
@@ -62,7 +73,7 @@ body {
     -webkit-box-shadow: 0px 9px 12px 6px rgba(0,0,0,0.26); 
     box-shadow: 0px 9px 12px 6px rgba(0,0,0,0.26);
     overflow: auto;
-    padding: 25px 10px;
+    padding: 25px 15px;
 }
 
 #messageBox {
@@ -84,6 +95,7 @@ body {
     -webkit-box-shadow: 0px 9px 12px 6px rgba(0,0,0,0.26); 
     box-shadow: 0px 9px 12px 6px rgba(0,0,0,0.26);
 }
+
 #searchDiv {
     display: flex;
     flex-direction: column;
@@ -130,6 +142,7 @@ img {
 }
 
 input {
+    
     display: block;
     width: 100%;
     height: 40px;
@@ -181,7 +194,7 @@ a {
     padding: 10px;
     display: flex;
     justify-content: space-between;
-    width: 95%;
+    width: 100%;
     height: auto;
     background-color: aqua;
 }

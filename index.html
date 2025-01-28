@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css"/>
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <body>
     <header id="header">
         <div id="logo">
@@ -24,20 +26,19 @@
         <div id="container">
             <div id="searchBox" class="containerBox">
                 <div id="searchDiv">
-                    <input type="text" name="departure" placeholder="Departure"  id="DepartureInput" value>
-                    <input type="text" name="arrival" placeholder="Arrival"id="ArrivalInput" value>
+                    <input type="text" name="departure" placeholder="Departure"  id="DepartureInput" class="inputStyle" value>
+                    <input type="text" name="arrival" placeholder="Arrival" id="ArrivalInput" class="inputStyle" value>
+                    <input type="date" name="date" id="dateInput">
                 </div>
-                <input type="date" name="date" id="dateInput">
                 <button  type="button" id="submitButton" >Search</button>
             </div>
             <div id="resultBox" class="containerBox">
-               
-                <img src="./images/train.png" alt="train pic">
-                <div id="line"></div>
-                <p >it's time to book your trip.</p>
+
             </div>
-            <div id="messageBox">
-                
+            <div id="messageBox" class="containerBox">
+                <img id="messageBox-img" src="./images/train.png" alt="train pic">
+                <div id="line"></div>
+                <p class="bookingText">it's time to book your trip.</p> 
             </div>
         </div>
     </main>

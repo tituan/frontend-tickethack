@@ -1,6 +1,7 @@
 body {
     padding: 0;
     margin: 0;
+    font-family: "Montserrat", serif;
 }
 
 #header {
@@ -10,6 +11,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    -webkit-box-shadow: 0px 9px 15px -1px rgba(0,0,0,0.26); 
+    box-shadow: 0px 9px 15px -1px rgba(0,0,0,0.26);
 }
 /* #logo {
 } */
@@ -32,14 +35,13 @@ body {
 #title {
     margin-bottom: 20px;
     margin-top: 20px;
-    width: 60%;
-    /* background-color: white; */
+    width: 80%;
     text-align: center;
     color: white;
 }
 #container {
     /* background-color: rgb(120, 84, 84); */
-    width: 50%;
+    width: 70%;
     height: 50vh;
     display: flex;
     justify-content: space-between;
@@ -49,21 +51,37 @@ body {
     border-radius: 10px;
     background-color: white;
     height: 90%;
-    width: 40%;
+    width: 35%;
 }
 
 #resultBox {
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    -webkit-box-shadow: 0px 9px 12px 6px rgba(0,0,0,0.26); 
+    box-shadow: 0px 9px 12px 6px rgba(0,0,0,0.26);
+}
+
+#messageBox {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    padding: 25px 30px;
+    -webkit-box-shadow: 0px 9px 12px 6px rgba(0,0,0,0.26); 
+    box-shadow: 0px 9px 12px 6px rgba(0,0,0,0.26);
 }
 
 #searchBox {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 25px 30px;
+    -webkit-box-shadow: 0px 9px 12px 6px rgba(0,0,0,0.26); 
+    box-shadow: 0px 9px 12px 6px rgba(0,0,0,0.26);
 }
 #searchDiv {
     display: flex;
@@ -75,6 +93,7 @@ body {
 img {
     width: 50%;
 }
+
 #line {
     height: 1px;
     width: 70%;
@@ -86,21 +105,39 @@ img {
     color: rgb(58, 124, 113);
     font-weight: 800;
     font-size: x-large;
+    font-family: "Roboto", serif;
 }
+
 #submitButton {
     background-color: rgb(58, 124, 113);
     border-radius: 5px;
     width: 80%;
-    height: 30px;
+    height: 40px;
     border-color: rgb(58, 124, 113);
     color: white;
+    border: 0;
+    -webkit-box-shadow: 0px 9px 12px 2px rgba(0,0,0,0.12); 
+    box-shadow: 0px 9px 12px 2px rgba(0,0,0,0.12);
+    cursor: pointer;
+    font-size: 900;
 }
+
+#submitButton:hover {
+    transition: 0.2s all;
+    -webkit-box-shadow: 0px 9px 12px 2px rgba(0,0,0,0.20); 
+    box-shadow: 0px 9px 12px 2px rgba(0,0,0,0.20);
+}
+
 input {
-    width: 90%;
-    height: 20px;
+    display: block;
+    width: 100%;
+    height: 40px;
     border-color: white;
     border-radius: 5px;
+    border: 0;
+    padding: 5px 10px;
     background-color: rgb(242, 242, 237);
+    outline: none;
 }
 
 #whiteBG {
@@ -161,4 +198,14 @@ a {
 .dateShow {
     width: 22%;
     background-color: rgb(56, 66, 66);
+}
+
+#ArrivalInput {
+    margin-bottom: 50px;
+    border-radius: 0 0 5px 5px;
+}
+
+#DepartureInput {
+    border-bottom: 1px solid #D3D3D3;
+    border-radius: 5px 5px 0 0;
 }

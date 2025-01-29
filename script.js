@@ -70,7 +70,17 @@ function addNew() {
     let buyButton = document.querySelectorAll(".buyButton");
     buyButton.forEach((element) => {
         element.addEventListener("click", function () {
-            console.log("ouch");
+            const tabId = this.dataset.tripid;
+            console.log(tabId);
+            fetch("http://localhost:3000/cart", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(tabId),
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                });
         });
     });
 }

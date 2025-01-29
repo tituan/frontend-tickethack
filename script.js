@@ -61,6 +61,7 @@ function createTrip(dataTab) {
             <div class="depShow"><p>${element.departure}</p></div>
             <div class="arrShow"><p>${element.arrival}</p></div>
             <div class="dateShow"><p>${dateFormat(element.date)}</p></div>
+            <div class="dateShow"><p>${element.price}</p></div>
             <button  type="button" class="buyButton" >Cart</button>
         </div>
         `;

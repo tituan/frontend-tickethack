@@ -25,12 +25,14 @@ document.querySelector("#submitButton").addEventListener("click", function () {
                     if (valueTrips === 0) {
                         for (const element of data.dataTrip) {
                             createTrip(element);
+                            addNew();
                         }
                     } else {
                         resetResultBox();
                         for (const element of data.dataTrip) {
                             createTrip(element);
                         }
+                        addNew();
                     }
                 } else if (data.result === false) {
                     document.querySelector("#messageBox-img").src =
@@ -62,4 +64,13 @@ function createTrip(dataTab) {
         <button  type="button" data-tripid="${dataTab.id}"class="buyButton" >Cart</button>
     </div>
     `;
+}
+
+function addNew() {
+    let buyButton = document.querySelectorAll(".buyButton");
+    buyButton.forEach((element) => {
+        element.addEventListener("click", function () {
+            console.log("ouch");
+        });
+    });
 }

@@ -15,7 +15,6 @@ document.querySelector("#submitButton").addEventListener("click", function () {
         })
             .then((response) => response.json())
             .then((data) => {
-                // console.log(data);
                 if (data.result === true) {
                     let valueTrips =
                         document.querySelectorAll(".newTrip").length;
@@ -72,7 +71,7 @@ function addNew() {
         element.addEventListener("click", function () {
             const tabId = this.dataset.tripid;
             console.log(tabId);
-            fetch("http://localhost:3000/carts", {
+            fetch("http://localhost:3000/cart", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ tripid: tabId }),
@@ -80,7 +79,7 @@ function addNew() {
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(tabId);
-                    res.json({ tripid: tabId });
+                    window.location.href ="cart.html"
                 });
         });
     });

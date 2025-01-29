@@ -75,7 +75,7 @@ function addNew() {
             fetch("http://localhost:3000/cart", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(tabId),
+                body: JSON.stringify({ tripid: tabId }),
             })
                 .then((response) => response.json())
                 .then((data) => {

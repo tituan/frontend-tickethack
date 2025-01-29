@@ -1,4 +1,4 @@
-// const moment = require("./moment"); 
+// const moment = require("./moment");
 
 document.querySelector("#submitButton").addEventListener("click", function () {
     const trip = {
@@ -16,12 +16,13 @@ document.querySelector("#submitButton").addEventListener("click", function () {
             .then((response) => response.json())
             .then((data) => {
                 if (data.result === true) {
-                    let valueTrips = document.querySelectorAll(".newTrip").length
+                    let valueTrips =
+                        document.querySelectorAll(".newTrip").length;
                     if (valueTrips === 0) {
-                        createTrip(data.trips)
+                        createTrip(data.trips);
                     } else {
-                        resetResultBox()
-                        createTrip(data.trips)
+                        resetResultBox();
+                        createTrip(data.trips);
                     }
                 } else if (data.result === false) {
                     document.querySelector("#messageBox-img").src =
@@ -36,19 +37,18 @@ document.querySelector("#submitButton").addEventListener("click", function () {
 });
 
 function dateFormat(dateRecieve) {
-    const date = new Date(dateRecieve)
+    const date = new Date(dateRecieve);
     const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    let dateFormat = `${year}-${month}-${day}`
-    return dateFormat
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    let dateFormat = `${day}-${month}-${year}`;
+    return dateFormat;
 }
 
-
 function resetResultBox() {
-    const element = document.querySelectorAll(".newTrip")
+    const element = document.querySelectorAll(".newTrip");
     for (let i = 0; i < element.length; i++) {
-        element[i].remove()
+        element[i].remove();
     }
 }
 

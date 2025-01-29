@@ -41,7 +41,9 @@ function dateFormat(dateRecieve) {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const day = String(date.getDate()).padStart(2, "0");
-    let dateFormat = `${day}-${month}-${year}`;
+    const hour = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    let dateFormat = `${hour}:${minutes}`;
     return dateFormat;
 }
 
@@ -59,8 +61,10 @@ function createTrip(dataTab) {
         document.querySelector("#resultBox").innerHTML += `
         <div class="newTrip">
             <div class="depShow"><p>${element.departure}</p></div>
+            <span>></span>
             <div class="arrShow"><p>${element.arrival}</p></div>
             <div class="dateShow"><p>${dateFormat(element.date)}</p></div>
+            <div class="priceShow"><p>${element.price}€</p></div>
             <button  type="button" class="buyButton" >Cart</button>
         </div>
         `;

@@ -192,26 +192,35 @@ a {
     padding: 5px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
     width: 100%;
     height: auto;
-    background-color: rgb(242, 242, 237);
+    /* background-color: rgb(242, 242, 237); */
     font-size: 12px;
 }
 
 .depShow {
-    width: 20%;
-    background-color: rgb(242, 242, 237);
+    width: auto;
+    /* background-color: rgb(106, 106, 13); */
+    /* margin-right: 5px; */
 }
 
 .arrShow {
     width: 20%;
-    background-color: rgb(242, 242, 237);
+    /* background-color: rgb(33, 33, 7); */
 }
 
 .dateShow {
-    width: 25%;
-    background-color: rgb(242, 242, 237);
+    width: 19%;
+    /* background-color: rgb(144, 144, 71); */
+    text-align: center;
+}
+.priceShow {
+    width: 15%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
 }
 
 #ArrivalInput {
@@ -229,7 +238,7 @@ a {
 }
 
 .buyButton {
-    height: 40;
+    height: 40px;
     background-color: rgb(58, 124, 113);
     color: white;
     border-radius: 5px;

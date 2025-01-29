@@ -1,4 +1,4 @@
-// const moment = require("./moment"); 
+// const moment = require("./moment");
 
 document.querySelector("#submitButton").addEventListener("click", function () {
     const trip = {
@@ -15,19 +15,21 @@ document.querySelector("#submitButton").addEventListener("click", function () {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
+                console.log(data);
                 if (data.result === true) {
-                    let valueTrips = document.querySelectorAll(".newTrip").length
-                    document.querySelector("#messageBox").style.display = "none";
+                    let valueTrips =
+                        document.querySelectorAll(".newTrip").length;
+                    document.querySelector("#messageBox").style.display =
+                        "none";
                     document.querySelector("#resultBox").style.display = "flex";
                     if (valueTrips === 0) {
                         for (const element of data.dataTrip) {
-                            createTrip(element)
+                            createTrip(element);
                         }
                     } else {
-                        resetResultBox()
+                        resetResultBox();
                         for (const element of data.dataTrip) {
-                            createTrip(element)
+                            createTrip(element);
                         }
                     }
                 } else if (data.result === false) {
@@ -42,12 +44,10 @@ document.querySelector("#submitButton").addEventListener("click", function () {
     }
 });
 
-
-
 function resetResultBox() {
-    const element = document.querySelectorAll(".newTrip")
+    const element = document.querySelectorAll(".newTrip");
     for (let i = 0; i < element.length; i++) {
-        element[i].remove()
+        element[i].remove();
     }
 }
 

@@ -55,9 +55,10 @@ function createTrip(dataTab) {
     document.querySelector("#resultBox").innerHTML += `
     <div class="newTrip">
         <div class="depShow"><p>${dataTab.departure}</p></div>
+          <span>></span>
         <div class="arrShow"><p>${dataTab.arrival}</p></div>
         <div class="dateShow"><p>${dataTab.date}</p></div>
-        <div class="dateShow"><p>${dataTab.price}</p></div>
+        <div class="priceShow"><p>${dataTab.price}€</p></div>
         <button  type="button" data-tripid="${dataTab.id}"class="buyButton" >Cart</button>
     </div>
     `;

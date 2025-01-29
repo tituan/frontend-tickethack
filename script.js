@@ -15,13 +15,20 @@ document.querySelector("#submitButton").addEventListener("click", function () {
         })
             .then((response) => response.json())
             .then((data) => {
+                console.log(data)
                 if (data.result === true) {
                     let valueTrips = document.querySelectorAll(".newTrip").length
+                    document.querySelector("#messageBox").style.display = "none";
+                    document.querySelector("#resultBox").style.display = "flex";
                     if (valueTrips === 0) {
-                        createTrip(data.trips)
+                        for (const element of data.dataTrip) {
+                            createTrip(element)
+                        }
                     } else {
                         resetResultBox()
-                        createTrip(data.trips)
+                        for (const element of data.dataTrip) {
+                            createTrip(element)
+                        }
                     }
                 } else if (data.result === false) {
                     document.querySelector("#messageBox-img").src =
@@ -35,14 +42,6 @@ document.querySelector("#submitButton").addEventListener("click", function () {
     }
 });
 
-function dateFormat(dateRecieve) {
-    const date = new Date(dateRecieve)
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    let dateFormat = `${year}-${month}-${day}`
-    return dateFormat
-}
 
 
 function resetResultBox() {
@@ -53,17 +52,13 @@ function resetResultBox() {
 }
 
 function createTrip(dataTab) {
-    for (const element of dataTab) {
-        document.querySelector("#messageBox").style.display = "none";
-        document.querySelector("#resultBox").style.display = "flex";
-        document.querySelector("#resultBox").innerHTML += `
-        <div class="newTrip">
-            <div class="depShow"><p>${element.departure}</p></div>
-            <div class="arrShow"><p>${element.arrival}</p></div>
-            <div class="dateShow"><p>${dateFormat(element.date)}</p></div>
-            <div class="dateShow"><p>${element.price}</p></div>
-            <button  type="button" class="buyButton" >Cart</button>
-        </div>
-        `;
-    }
+    document.querySelector("#resultBox").innerHTML += `
+    <div class="newTrip">
+        <div class="depShow"><p>${dataTab.departure}</p></div>
+        <div class="arrShow"><p>${dataTab.arrival}</p></div>
+        <div class="dateShow"><p>${dataTab.date}</p></div>
+        <div class="dateShow"><p>${dataTab.price}</p></div>
+        <button  type="button" data-tripid="${dataTab.id}"class="buyButton" >Cart</button>
+    </div>
+    `;
 }
